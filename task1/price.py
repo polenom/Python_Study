@@ -1,0 +1,5 @@
+a = int(input())
+b = int(input())
+c = int(input())
+print((a+b/100)*c//1)
+print(round((a+b/100)*c%1,2))
