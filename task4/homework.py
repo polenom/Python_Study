@@ -28,3 +28,13 @@ elif sum(x) == sum(com):
     print('у человечества есть шанс')
 else:
     print('Все беда')
+reschel = 0
+resrobot = 0
+for i in range(5):
+    a,b,c = map(int, input('Раунд %s '%(str(5-i))).split())
+    reschel+= res[a]+res[b]+res[c]
+    for i in range(3):
+        resrobot+=res[random.randrange(15)]
+print("Победил %s c %s результатом против %s" %('человек' if reschel >= resrobot else 'робот',\
+                                    str(reschel) if reschel >= resrobot else str(resrobot),\
+                                    str(resrobot) if reschel >= resrobot else str(reschel)))
