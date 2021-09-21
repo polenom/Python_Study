@@ -2,6 +2,7 @@ def rashet(file):
     global countwords
     global lenswords
     for stroka in file:
+        stroka = stroka.replace('\n','')
         for slova in stroka.split():
             res = ''
             if slova.find('--') != -1:
