@@ -1,0 +1,10 @@
+file1 = list(map(lambda stroka: int(stroka[:-1]),open('files_input1.txt')))
+file2 = list(map(lambda stroka: int(stroka[:-1]),open('files_input2.txt')))
+filefin = open('lesson1','w')
+file3 = file1+file2
+filefin.write(str(len(file3))+'\n')
+filefin.write(str(max(file3))+'\n')
+filefin.write(str(min(file3))+'\n')
+filefin.write(str(sum(file3)/len(file3))+'\n')
+filefin.write(str(len([i for i in file3 if i%2 == 0]))+'\n')
+filefin.close()
