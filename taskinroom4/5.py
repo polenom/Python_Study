@@ -2,9 +2,12 @@ def rashet(file):
     global countwords
     global lenswords
     for stroka in file:
-        stroka = stroka.replace('\n','')
         for slova in stroka.split():
             res = ''
+            if len(slova) == 1 and  slova.isalpha():
+                countwords+=1
+                lenswords.append(1)
+                continue
             if slova.find('--') != -1:
                 slova = slova.replace('--','')
             for alph in slova:
@@ -15,13 +18,13 @@ def rashet(file):
             else:
                 countwords+=1
                 lenswords.append(len(res))
-
-filefin = open('lesson5','w')
-file1 = open('files_input4.txt')
-file2 = open('files_input5.txt')
 countwords = 0
 lenswords = []
-rashet(file1)
-rashet(file2)
-filefin.write(str(countwords))
+filefin = open('lesson5','w')
+with  open('files_input4.txt') as file1:
+    with open('files_input5.txt') as file2:
+        rashet(file1)
+        rashet(file2)
+filefin.write(str(countwords)+'\n')
 filefin.write(str(round(sum(lenswords)/len(lenswords),2)))
+filefin.close()
