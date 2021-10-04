@@ -1,0 +1,5 @@
+P = int(input())
+X = input()
+Y = input()
+res =str(float(X+'.'+Y)*(100+P)/100)
+print(res.split('.')[0], res.split('.')[1][:2])
